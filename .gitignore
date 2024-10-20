@@ -3,4 +3,4 @@ fonts/
 img/
 settings.py
 venv/
-config.py
+**/config.py
