@@ -1,0 +1,6 @@
+__pycache__/
+fonts/
+img/
+settings.py
+venv/
+config.py

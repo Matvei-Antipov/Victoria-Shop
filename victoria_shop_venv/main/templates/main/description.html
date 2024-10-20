@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    {% include 'main/base.html' %}
+    <body>
+        <div class="subnavbar">
+            <a href="/product/description/{{ good.article }}" class="subnavbar__link">
+                <p class="subnavbar__text {% if '/product/' in request.path%}active{% endif %}">Опис</p>
+            </a>
+            <a href="/" class="subnavbar__link">
+                <p class="subnavbar__text">Відгуки</p>
+            </a>
+            <a href="/" class="subnavbar__link">
+                <p class="subnavbar__text">Про доставку</p>
+            </a>
+            <a href="/" class="subnavbar__link">
+                <p class="subnavbar__text">Замовляють разом</p>
+            </a>
+        </div>
+        <div class="columns">
+            <div class="first__column">
+                <div class="image__wrapper">
+                    <img src="data:image/png;base64,{{ good.base64_data }}" alt="{{ good.name }}">
+                    <div class="description">
+                        <p class="name">{{ good.name }}</p>
+                        <div class="country__wrapper">
+                            {% if is_egypt %}
+                                <p class="country">Країна  виробник: </p>
+                                <p class="flag">&#x1F1EA;&#x1F1EC;</p>
+                            {% else %}
+                                <p class="country">Країна  виробник: </p>
+                                <p class="flag">🇹🇷</p>
+                            {% endif %}
+                        </div>
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="second__column">
+                <div class="n__and__a">
+                    <p class="name_second">{{ good.name }}</p>
+                    <p class="article">#{{ good.article }}</p>
+                </div>
+                <div class="s__and__r">
+                    <div class="star-container">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                    <p class="article__buy">1 відгук</p>
+                </div>
+                <div class="s__between__s">
+                    <div class="strip__90"></div>
+                    <div class="other">
+                        <h1 class="name">₴ {{ good.price }}</p>
+                        {% if is_available %}
+                            <h1 class="status__green">В наявності</p>
+                        {% else %}
+                            <h1 class="status__red">Немає в наявності</p>
+                        {% endif %}
+                    </div>
+                    <div class="other">
+                        <h1 class="name">Оплата: </p>
+                        <h1 class="article__buy">Оплата у відділенні пошти, оплата картою</p>
+                    </div>
+                    <div class="strip__90"></div>
+                    <p class="desc">{{ good.description }}</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

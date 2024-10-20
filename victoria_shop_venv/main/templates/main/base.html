@@ -1,0 +1,69 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    {% comment %} Подключение стилей {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/buttons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/media.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/registration.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/product.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji">
+
+    {% comment %} Подключение иконки для favicon {% endcomment %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo_victoria.png' %}">
+
+</head>
+
+{% block header %}
+    <header>
+        <div class="logo__and__buttons">
+            <a href="/" class="logo">
+                <img src="{% static 'img/logo_victoria.png' %}" alt="logo">
+            </a>
+            <div class="search__bar">
+                <input type="text" placeholder="🔍︎ Пошук" class="search__bar__text">
+            </div>
+            <div class="navbar__buttons">
+                <a href="/" class="navbar__link">
+                    <p class="navbar__text">Продукти</p>
+                </a>
+                <a href="https://t.me/tovaru_victoria_help_bot" class="navbar__link">
+                    <p class="navbar__text">Зв'язатися</p>
+                </a>
+                <a href="/" class="navbar__link">
+                    <p class="navbar__text">Відгуки</p>
+                </a>
+                <a href="javascript:void(0);" class="navbar__link" id="toggleFilterMenu">
+                    <p class="navbar__text">Фільтри</p>
+                </a>
+                <a href="/" class="navbar__link">
+                    <p class="navbar__text">Про нас</p>
+                </a>
+                <a href="/" class="navbar__link">
+                    <img src="{% static 'img/account.svg' %}" alt="">
+                </a>
+                <a href="{% url "registration" %}" class="navbar__link">
+                    <img src="{% static 'img/registration.svg' %}" alt="">
+                </a>
+            </div>
+            <div class="burger__menu" onclick="toggleBurger()">
+                <div class="burger__line line1"></div>
+                <div class="burger__line line2"></div>
+                <div class="burger__line line3"></div>
+            </div>
+            <div class="vertical-buttons">
+                <a class="vertical-link" href="/">Продукти</a>
+                <a class="vertical-link" href="https://t.me/shop_victoria_support_bot">Зв'язатися</a>
+                <a class="vertical-link" href="/">Відгуки</a>
+                <a class="vertical-link" href="/">Фільтри</a>
+                <a class="vertical-link" href="/">Про нас</a>
+            </div>
+        </div>
+    </header>
+{% endblock header %}

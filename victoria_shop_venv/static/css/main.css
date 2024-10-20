@@ -1,0 +1,487 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 2%;
+    background-color: #ffffff;
+}
+input{
+    margin: 0;
+}
+.logo__and__buttons {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 5%;
+    margin-left: 5%;
+}
+
+.navbar__buttons {
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.navbar__buttons a {
+    margin-left: 2vw;
+}
+
+.search__bar {
+    flex-grow: 1; /* Занимаем доступное пространство */
+    margin-left: 5%;
+}
+
+.search__bar input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #D8E0E2;
+    border-radius: 8px;
+    outline: none;
+    margin: 0;
+    box-sizing: border-box;
+}
+.logo img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.burger__menu{
+    visibility: hidden;
+}
+
+.burger__line{
+    visibility: hidden;
+}
+
+.vertical-buttons {
+    display: none;
+}
+
+.navbar__link {
+    margin-left: 10px;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar__text {
+    white-space: nowrap;
+    position: relative;
+    display: block;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #182327;
+    overflow: hidden; /* Добавлено, чтобы обрезать градиент, выходящий за пределы текста */
+}
+
+.navbar__text:before {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    height: 2px; /* Изменено значение высоты для увеличения ширины линии */
+    background-color: black;
+    visibility: hidden;
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: transform 0.2s;
+}
+
+.navbar__text:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+.first__page__container {
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    position: relative; /* Добавлено для позиционирования псевдоэлемента относительно этого контейнера */
+    background-image: url(/static/img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.first__page__container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    z-index: 0; /* Слой псевдоэлемента над фоном */
+}
+.text__opening {
+    font-size: 4vw; /* Адаптивный размер шрифта на основе ширины вьюпорта */
+    max-width: 90%; /* Уменьшение максимальной ширины текста для лучшей адаптации на узких экранах */
+    margin: 0 auto; /* Автоматический отступ слева и справа для центрирования текста */
+    transform: translate(-50%, -50%) translateY(-3%); /* Оптимизированное центрирование по центру фотографии */
+    z-index: 1;
+    color: #FFF;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 724;
+    line-height: 1.5; /* Использование множителя для установки line-height */
+    letter-spacing: 2.25px;
+}
+
+.second__page__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.second__page__container img:first-child {
+    margin-left: auto;
+    max-width: 33vw;
+    max-height: 100%;
+    width: auto;
+}
+
+.second__page__elements{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: 5%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.second__page__elements p {
+    margin-bottom: 20px; /* Увеличиваем вертикальный отступ между параграфами */
+}
+
+.star-container {
+    display: flex;
+    margin-bottom: 20px; /* Увеличиваем вертикальный отступ после блока звезд */
+}
+
+.title__sahara{
+    font-family: 'Alata';
+    color: #182327;
+    font-weight: bold;
+}
+.subtitle__sahara{
+    font-family: 'Manrope';
+    color: #5D696D;
+    line-height: 1.5;
+}
+
+.cost__sahara{
+    font-family: 'Alata';
+    color: #182327;
+    font-weight: bold;
+
+}
+
+.star-container {
+    display: flex;
+}
+
+.star:not(:first-child){
+    width: 20px;
+    height: 15px;
+    background-color: gold; /* Золотой цвет */
+    margin: 2%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.star:first-child{
+    width: 20px;
+    height: 15px;
+    background-color: gold;
+    margin: 2% 2% 2% 0;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.third__page__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.title__3pg__wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cards__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 5%;
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Стили для изображения товара */
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Стили для кнопки добавления товара */
+.btn__add__wrapper {
+    position: absolute;
+    bottom: 8%;
+    right: 0;
+}
+
+.btn__add {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1A1E21;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn__add:hover {
+    transform: scale(1.1);
+    background-color: #000000fd;
+    animation: rotateButton 0.1s linear;
+    animation-play-state: paused;
+}
+
+@keyframes rotateButton {
+    0% {
+        transform: rotate(0deg) scale(1); /* Начальный угол вращения */
+    }
+    100% {
+        transform: rotate(90deg) scale(1); /* Конечный угол вращения */
+    }
+}
+
+.btn__add:hover {
+    animation-play-state: running;
+}
+
+.btn__add::before {
+    content: "+";
+}
+
+.cost {
+    font-size: 16px;
+    font-family: 'Alata';
+    font-weight: bold;
+    justify-content: flex-start;
+    padding: 2%;
+    color: #000000;
+}
+
+.description {
+    font-family: 'Manrope';
+    font-size: 14px;
+    justify-content: flex-start;
+    color: #5D696D;
+    padding: 1%;
+}
+
+.title__3pg{
+    font-family: 'Manrope';
+    color: #000000;
+    font-size: 42px;
+    list-style: 10vh;
+}
+.subtitle__3pg{
+    font-family: 'Manrope';
+    color: #000000;
+    font-size: 18px;
+    line-height: 10vh;
+}
+.image__item {
+    flex: 1; /* равномерно распределить пространство между изображениями */
+    margin: 0 5px; /* задать отступы между изображениями */
+}
+
+.image__item img {
+    height: 50vh;
+    object-fit: cover;
+    width: 100%; /* заполнить всю ширину элемента-контейнера */
+
+}
+.filter__menu{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: relative;
+    display: flex;
+    height: auto;
+    width: 100%;
+    padding-top: 2%;
+    background-color: white;
+}
+.filter__menu::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #182327;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.filter__menu.active {
+    opacity: 1;
+    position: relative;
+    display: flex;
+    height: auto;
+    width: 100%;
+    padding-top: 2%;
+    background-color: white;
+}
+.country__column{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    padding-bottom: 5%;
+    padding-left: 2%;
+}
+.filters__column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5vh;
+    padding-left: 1%;
+}
+.country__ticker__wrapper{
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+}
+.country__name{
+    justify-content: center;
+    color: #182327;
+    font-family: 'Manrope';
+    font-size: 15px;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+.title__wrapper{
+    font-size: 25px;
+    font-family: "Manrope";
+    color: #182327;
+}
+
+.checkbox-container input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.checkbox-container .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transform-origin: bottom left;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.checkbox-container input:checked + .checkmark {
+    background-color: #182327;
+}
+
+.checkbox-container input:checked + .checkmark::after {
+    opacity: 1;
+    animation: checkmark-swing 0.5s ease-in-out forwards;
+}
+
+@keyframes checkmark-swing {
+    0% {
+        transform: rotate(45deg) scale(0);
+    }
+    25% {
+        transform: rotate(35deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(55deg) scale(1.1);
+    }
+    75% {
+        transform: rotate(40deg) scale(1.05);
+    }
+    100% {
+        transform: rotate(45deg) scale(1);
+    }
+}
+.tickers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+.country__ticker__wrapper {
+    break-inside: avoid;
+    margin: 0 5px 10px; /* Отступы между элементами */
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+form.no-style-form {
+    all: unset;
+}
+
+/* Возвращаем базовые стили дочерним элементам */
+form.no-style-form > * {
+    all: revert;
+}

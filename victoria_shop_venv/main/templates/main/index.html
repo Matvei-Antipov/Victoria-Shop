@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    {% include 'main/base.html' %}
+    <body>
+        {% block header %}{% endblock header %}
+            <div class="first__page__container">
+                <div class="filter__menu" id="filterMenu">
+                    <div class="country__column">
+                        <p class="title__wrapper">Країна:</p>
+                        <form method="GET" action="{% url 'index' %}" class="no-style-form" id="filterFormCountries">
+                            <div class="tickers">
+                                {% for country in countries %}
+                                <div class="country__ticker__wrapper">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" name="country" value="{{ country }}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <p class="country__name">{{ country }}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </form>
+                    </div>
+                    <div class="filters__column">
+                        <p class="title__wrapper">Фільтри:</p>
+                        <form method="GET" action="{% url 'index' %}" class="no-style-form" id="filterFormCategories">
+                            <div class="tickers">
+                                {% for category in categories %}
+                                    {% if forloop.counter0|divisibleby:3 %}
+                                        <div class="group">
+                                    {% endif %}
+                                    
+                                    <div class="country__ticker__wrapper">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" name="category" value="{{ category }}">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <p class="country__name">{{ category }}</p>
+                                    </div>
+                    
+                                    {% if forloop.counter|divisibleby:3 or forloop.last %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </form>
+                    </div>                                                           
+                </div>               
+                
+                <p class="text__opening">
+                    Ми пропонуємо якісні<br>товари із Єгипту
+                </p>
+            </div>
+            <div class="second__page__container">
+                <img src="{% static 'img/sahara.png' %}" alt="">
+                <div class="second__page__elements">
+                    <p class="title__sahara">Body Butter Greeen Tea Sahara</p>
+                    <div class="star-container">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                    <p class="subtitle__sahara">Ціна</p>
+                    <p class="cost__sahara">₴ 650</p>
+                    <p class="subtitle__sahara">Натуральний, концентрований Body Butter Green Tea Sahara<br> мус для тіла.<br>Робота виконана вручну без використання будь-яких<br>механізмів.</p>
+                    <a href="/">
+                        <img src="{% static 'img/buy_button.svg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="third__page__container">
+                <div class="title__3pg__wrapper">
+                    <p class="title__3pg">Знайди найкраще тут</p>
+                    <p class="subtitle__3pg">Тут можна придбати найкращі экзотичні товари з Єгипту, Турції та ОАЄ.</p>
+                </div>
+                <div class="cards__container" id="goodsContainer">
+                    {% for good in goods %}
+                        <div class="card">
+                            <div class="image__item">
+                                <a href="{% url 'description' article=good.article %}">
+                                    <img src="data:image/png;base64,{{ good.base64_data }}" alt="{{ good.name }}">
+                                </a>
+                            </div>
+                            <div class="btn__add__wrapper">
+                                <div class="btn__add"></div>
+                            </div>
+                            <div class="cost__description">
+                                <p class="cost">₴ {{ good.price }}</p>
+                                <p class="description">{{ good.name }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% comment %} Подключение JS {% endcomment %}
+
+            <script src="{% static 'js/script.js' %}"></script>
+        </body>
+</html>

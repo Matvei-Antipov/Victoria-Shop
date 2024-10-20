@@ -1,0 +1,182 @@
+.subnavbar{
+    background-color: #182327;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+}
+.subnavbar__text {
+    white-space: nowrap;
+    position: relative;
+    display: block;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #ffffff;
+    overflow: hidden; /* Добавлено, чтобы обрезать градиент, выходящий за пределы текста */
+}
+
+.subnavbar__text:before {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    height: 2px; /* Изменено значение высоты для увеличения ширины линии */
+    background-color: rgb(255, 255, 255);
+    visibility: hidden;
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: transform 0.2s;
+}
+
+.subnavbar__text:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+.subnavbar__text.active {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 3px;
+}
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Стили для каждой колонки */
+.first__column,
+.second__column{
+    flex: 1;
+    box-sizing: border-box;
+}
+
+/* Стили для изображений и описания */
+.image__wrapper {
+    text-align: center;
+    padding: 10%;
+}
+
+.image__wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+/* Стили для country__wrapper */
+.country__wrapper {
+    display: flex;
+    gap: 5px;
+}
+
+/* Стили для second__column */
+
+.title {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Стили для third__column */
+.n__and__a {
+    display: flex;
+    padding-top: 10%;
+    justify-content: space-between;
+}
+
+.s__and__r {
+    padding-right: 5%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.star-container {
+    display: flex;
+    margin: 0;
+    align-items: center;
+    gap: 5px;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    background-color: gold;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.strip__90 {
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+    margin: 10px 0;
+}
+.other{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 5%;
+}
+.other h1 {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.desc {
+    font-size: 25px;
+    color: #182327;
+    font-weight: 10;
+    line-height: 30px;
+    font-variant: normal;
+    font-family: 'Inter';
+    margin-top: 10px;
+}
+.country{
+    margin-top: 10px;
+    font-family: 'Manrope';
+    font-size: 20px;
+}
+.flag{
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+}
+.name{
+    font-family: 'Manrope';
+    font-weight: bold;
+    font-size: 35px;
+    color: #182327;
+}
+.name_second{
+    font-family: 'Manrope';
+    font-weight: bold;
+    font-size: 25px;
+    color: #182327;
+}
+.status__green{
+    font-size: 16px;
+    font-family: 'Manrope';
+    color: #3AC948;
+}
+.status__red{
+    font-size: 16px;
+    font-family: 'Manrope';
+    color: #C93A3A;
+}
+.article{
+    padding-right: 5%;
+    color: #5D696D;
+}
+.article__buy{
+    color: #5D696D;
+    font-size: 16px;
+    font-family: 'Manrope';
+}

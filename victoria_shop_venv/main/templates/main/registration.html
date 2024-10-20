@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    {% include 'main/base.html' %}
+    <body>
+        <form action="/registration" method="post" enctype="application/x-www-form-urlencoded">
+            <label for="username" class="text__input">Ел.пошта:</label>
+            <input type="username" id="username" name="username" required>
+        
+            <label for="password" class="text__input">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+        
+            <button type="submit" class="text__registration button__registration">Зареєструватися</button>
+        </form>
+    </body>
+</html>
