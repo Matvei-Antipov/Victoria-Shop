@@ -34,7 +34,7 @@ input{
 }
 
 .search__bar {
-    flex-grow: 1; /* Занимаем доступное пространство */
+    flex-grow: 1;
     margin-left: 5%;
 }
 
